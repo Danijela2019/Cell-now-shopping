@@ -1,4 +1,3 @@
-
 import React, { createContext, useState} from 'react';
 import popularProducts from '../data/popular_data';
 import {IPropsChildren} from '../types'
