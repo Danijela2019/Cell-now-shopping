@@ -20,6 +20,9 @@ const  NavItems = () => {
             <li css={{margin:'0 1rem'}}>
                 <NavLink css={{textDecoration:'none', color:'#272643'}} to ='/phones'> Phones </NavLink>
             </li>
+            <li css={{margin:'0 1rem'}}>
+                <NavLink css={{textDecoration:'none', color:'#272643'}} to ='/accessories'> Accessories </NavLink>
+            </li>
             <li css={{display:'flex',alignItems:'center'}}>
             <NavLink  css={{textDecoration:'none', color:'#272643'}}to='/checkout'> Checkout ({itemCount})</NavLink>
             <Icon color='#272643' size='40px'>
