@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import popularProducts from '../services/popular_data';
+import popularProducts from '../data/popular_data';
 // @ts-ignore
 export const ProductsContext = createContext()
 

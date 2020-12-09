@@ -20,6 +20,4 @@ const PopularBoard = () => {
      );
 }
 
-
- 
 export default PopularBoard;

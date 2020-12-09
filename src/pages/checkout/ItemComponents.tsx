@@ -68,5 +68,22 @@ export const ButtonContainer = styled('div')`
 display:flex;
 }`
  
- 
+export const RemoveButton = styled('button')`
+padding: 5px;
+margin-top: 1rem;
+width: 115px;
+border: 1px solid #272643;
+cursor: pointer;
+outline: none;
+text-align: center;
+background-color:#272643;
+color:white;
+@media (max-width: 370px) {
+    width:6rem;
+`
+export const RemoveButtonWrapper = styled('div')`
+display:flex;
+justify-content:space-around;
+align-items:center;
+` 
 
