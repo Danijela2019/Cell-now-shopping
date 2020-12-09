@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
 /** @jsxImportSource @emotion/react */
 
-
 export const NavbarContainer = styled('nav')`
-height: 10vh;
+  height: 10vh;
   width: 100%;
   position: fixed;
   top: 0;
@@ -12,9 +11,8 @@ height: 10vh;
   background-color: white;
   justify-content: space-between;
   align-items: stretch;
-  padding: 0 20px;
+  padding: 0 30px;
   box-sizing: border-box;
-  z-index: 90;
   color: #272643;
   border-bottom: 1px solid #DCDCDC;
   box-shadow: .5px 2.5px 2.5px .5px #DCDCDC;

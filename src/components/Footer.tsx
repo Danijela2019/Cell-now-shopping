@@ -48,7 +48,7 @@ const  Footer = () => {
             <hr />
             <div>
                 <p>
-                    py;{new Date().getFullYear()} CellNow | All rights reserved
+                    {new Date().getFullYear()} CellNow | All rights reserved
                 </p>
             </div>
         </FooterContainer>

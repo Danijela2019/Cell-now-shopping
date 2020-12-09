@@ -5,17 +5,13 @@ import Home from './home'
 import Checkout from './checkout'
 import Phones from './phones'
 
-
-
 const Routes = () => {
   return (
-    
-        <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/phones' component={Phones} />
-              <Route path='/checkout' component={Checkout} />
-        </Switch>
-
+      <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/phones' component={Phones} />
+            <Route path='/checkout' component={Checkout} />
+      </Switch>
   );
 }
 

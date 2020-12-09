@@ -18,10 +18,11 @@ const ItemCard = ({product}) => {
    
     return ( 
         <Card
-        text='black'
-        bg='whitesmoke'
-        height= '200px'
-        width='350px'>
+            text='black'
+            bg='whitesmoke'
+            height= '200px'
+            width='350px'
+        >
             <Image src={product.img} alt={product.alt}/>
             <CardContent>
                 <Header>

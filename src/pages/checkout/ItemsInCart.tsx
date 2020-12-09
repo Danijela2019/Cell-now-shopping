@@ -6,9 +6,7 @@ import Item from './Item'
 
 
 const CartProducts = () => {
-
     const { cartItems } = useContext(CartContext);
-
     return ( 
         <div>
             <div>

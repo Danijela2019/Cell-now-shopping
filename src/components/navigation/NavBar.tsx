@@ -11,20 +11,8 @@ import { NavbarContainer, NavListWrapper} from './NavbarComponents';
 
 const  NavItems = () => {
     const {itemCount}:any= useContext(CartContext);
-
-   
-
-
-    /*const NLink = (props:any) => {
-        return(
-        <li css={{margin:'0 1rem'}}>
-            <NavLink css={{textDecoration:'none', color:'#272643'}} exact to ={props.to}> {props.chidren}</NavLink>
-        </li>
-        )
-    }*/
-
     return ( 
-         <NavListWrapper>
+        <NavListWrapper>
             <li css={{margin:'0 1rem'}}>
                 <NavLink css={{textDecoration:'none', color:'#272643'}} exact to='/'>Home</NavLink>
             </li>
@@ -37,8 +25,7 @@ const  NavItems = () => {
                 <AiOutlineShoppingCart />
             </Icon>
             </li>
-            </NavListWrapper>
-       
+        </NavListWrapper>
     )
 }
 
@@ -52,6 +39,5 @@ const  Navbar = () => {
         </NavbarContainer>
     )
 }
-
 
 export default Navbar;

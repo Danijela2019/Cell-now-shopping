@@ -13,20 +13,18 @@ import Routes from './pages';
 const App = () => {
   return (
     <ProductsContextProvider>
-        <CartContextProvider>
-          <div css={PageContainer}>
+      <CartContextProvider>
+        <main css={PageContainer}>
           <div css={ContentWraper}>
-          <Router>
-            <NavBar/>
-            <Routes/>
-           
-          </Router>
+            <Router>
+              <NavBar/>
+              <Routes/>
+            </Router>
           </div>
           <Footer />
-          </div>
+        </main>
       </CartContextProvider>
-      </ProductsContextProvider>
-  
+    </ProductsContextProvider>
   );
 }
 

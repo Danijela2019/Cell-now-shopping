@@ -6,14 +6,11 @@ import Logo from '../../components/navigation/Logo'
 import {Background, LogoWrapper, CoverHeader, CoverParagraph} from './HomeComponents'
 
 
-
-
 const Cover = () => {
-
     let history = useHistory();
     const redirectToPhones = () => {
         history.push('/phones')
-      }  
+    }  
 
     return (
         <Background>

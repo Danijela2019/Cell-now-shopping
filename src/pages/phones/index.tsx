@@ -3,10 +3,10 @@ import PhoneItems from './PhoneItems'
 
 const Phones = () => {
     return (
-        <div>
+        <section>
             <div>Phoneitmes:</div>
             <PhoneItems />
-        </div>  
+        </section>  
     )
 }
 
