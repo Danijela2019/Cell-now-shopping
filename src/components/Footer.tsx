@@ -52,7 +52,6 @@ const  Footer = () => {
                 </p>
             </div>
         </FooterContainer>
-
     );
 }
 
