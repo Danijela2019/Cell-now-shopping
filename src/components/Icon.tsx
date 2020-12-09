@@ -1,23 +1,18 @@
 import React from 'react';
-import {IconContext} from "react-icons"
+import {IconContext} from 'react-icons'
+import {IconProps} from '../types'
 
-
-type IconProps = {
-    children: React.ReactElement
-    size: string
-    color:string
-}
 const Icon = (props: IconProps) => {
     return (
-          <IconContext.Provider value={{ style:{
-              fontSize: `${props.size}`,
-               color:`${props.color}`
-               }}}>
+        <IconContext.Provider value={{ style:{
+            fontSize: `${props.size}`,
+            color:`${props.color}`
+            }}}>
               <div>
                   { props.children }
               </div>
-          </IconContext.Provider>
-     )
+        </IconContext.Provider>
+    )
   }
 
 export default Icon;

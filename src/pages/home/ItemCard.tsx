@@ -9,7 +9,6 @@ import Card from '../../components/Card'
 
 
 const ItemCard = ({product}) => {
-
     const { addProduct, cartItems, increase } = useContext(CartContext);
 
     const isInCart = product => {

@@ -24,7 +24,7 @@ const Checkout = () => {
 
     return ( 
         <div css={{margin:'5rem 1rem',alignContent:'center'}}>
-            <div >
+            <div>
                 {cartItems.length > 0 ?
                             <ItemsInCart/> :
                             <EmptyCart >
@@ -40,39 +40,38 @@ const Checkout = () => {
                                     clicked={redirectToPhones}>
                                         Go back to phones
                                 </Button>
-
                             </EmptyCart>
                 }
             </div>
-                { cartItems.length > 0 ?
+                { cartItems.length > 0 &&
                     <div>
                         <div css={{display:'flex'}}>
-                <Header>Items:{' '}{itemCount}</Header>
-                <Header>Total Price:{' '}{total} SEK</Header>
+                            <Header>Items:{' '}{itemCount}</Header>
+                            <Header>Total Price:{' '}{total} SEK</Header>
                         </div>
                         <hr/>
                         <ButtonWrapper>
-                        <Button  
-                            bg="#2c698d"
-                            text="white"
-                            width="10rem"
-                            height="2rem" 
-                            clicked={goToCheckout}>
-                                CHECKOUT
-                        </Button>
-                        <Button  
-                            bg="#2c698d"
-                            text="white"
-                            width="10rem"
-                            height="2rem" 
-                            clicked={clearCart}>
-                                CLEAR CART
-                        </Button>
+                            <Button  
+                                bg="#2c698d"
+                                text="white"
+                                width="10rem"
+                                height="2rem" 
+                                clicked={goToCheckout}>
+                                    CHECKOUT
+                            </Button>
+                            <Button  
+                                bg="#2c698d"
+                                text="white"
+                                width="10rem"
+                                height="2rem" 
+                                clicked={clearCart}>
+                                    CLEAR CART
+                            </Button>
                         </ButtonWrapper>
-                    </div> : null }
-             </div>
+                    </div> 
+                }
+        </div> 
     );
 }
-
 
 export default Checkout;
