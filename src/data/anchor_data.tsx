@@ -55,7 +55,7 @@ export const footerAnchors = [
             },
             {
                 href: '#',
-                text:'Other qestions'
+                text:'Other questions'
             },
         ]
 

@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import { CartReducer, sumItems } from './CartReducer';
-import {IItem} from '../types'
+import {IItem, IPropsChildren} from '../types'
+
 
 
 export const CartContext = createContext<IItem|null>(null)
@@ -8,10 +9,8 @@ export const CartContext = createContext<IItem|null>(null)
 const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
   const initialState = { cartItems: storage, ...sumItems(storage), checkout: false };
 
-  type ChildrenProps= {
-      children: any
-  }
-const CartContextProvider = (props:ChildrenProps) => {
+  
+const CartContextProvider = ({children}: IPropsChildren) => {
 
     const [state, dispatch] = useReducer(CartReducer, initialState)
 
@@ -46,7 +45,7 @@ const CartContextProvider = (props:ChildrenProps) => {
 
     return ( 
         <CartContext.Provider value={contextValues}>
-        { props.children }
+        { children }
     </CartContext.Provider>
     )
 }
