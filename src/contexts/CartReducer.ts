@@ -1,6 +1,6 @@
 import {IItem} from '../types'
 
-const Storage = (cartItems: Array<IItem>) => {
+const Storage = (cartItems: Array<IItem|null>) => {
     localStorage.setItem('cart', JSON.stringify(cartItems.length > 0 ? cartItems: []));
 }
 
@@ -11,7 +11,8 @@ export const sumItems = (cartItems :Array<IItem>) => {
     return { itemCount, total }
 }
 
-export const CartReducer = (state:any , action: any) => {
+
+export const CartReducer = (state:any, action: any) => {
     switch (action.type) {
         case "ADD_ITEM":
             if (!state.cartItems.find((item:IItem) => item.id === action.payload.id)) {
@@ -20,7 +21,6 @@ export const CartReducer = (state:any , action: any) => {
                     quantity: 1
                 })
             } 
-
             return {
                 ...state,
                 ...sumItems(state.cartItems),

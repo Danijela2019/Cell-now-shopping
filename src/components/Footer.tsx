@@ -4,9 +4,9 @@ import React from 'react'
 import {FooterColumn, FooterContainer, Anchor, FooterRow,FooterLine} from './ComponentStyles'
 import Icon from './Icon'
 import {footerAnchors,followUsData } from '../data/anchor_data'
+import {IFooterColumnData, IPropFooterColumnData, IFollowUsData, IPropFollowUsData} from '../types'
 
-
-const FooterColumnList = ({data} :any) => (
+const FooterColumnList = ({data} :IPropFooterColumnData) => (
         <FooterColumn>
             <h3>{data.category}</h3>
             <Anchor href='#' target="_blank" rel="noopener">{data.links[0].text}</Anchor>
@@ -15,13 +15,12 @@ const FooterColumnList = ({data} :any) => (
         </FooterColumn>
     )
 
-
-const footerColumnData = footerAnchors.map((data:any) => (
+const footerColumnData = footerAnchors.map((data:IFooterColumnData) => (
     <FooterColumnList data={data} key={data.id}></FooterColumnList>
     )
 )
 
-const FollowUs = ({data}:any) => (
+const FollowUs = ({data}:IPropFollowUsData) => (
     <Anchor href='#' target="_blank" rel="noopener">
         <div css={{ marginLeft: '.5rem' }}>{data.text}</div>
          <Icon size='20px' color='white'>
@@ -30,8 +29,7 @@ const FollowUs = ({data}:any) => (
     </Anchor>
 )
 
-
-const followUsRow = followUsData.map((data:any) => (
+const followUsRow = followUsData.map((data:IFollowUsData) => (
         <FollowUs key={data.id} data={data}></FollowUs>
     )
 )

@@ -10,6 +10,7 @@ import { NavbarContainer, NavListWrapper} from './NavbarComponents';
 
 
 const  NavItems = () => {
+   
     const {itemCount}:any= useContext(CartContext);
     return ( 
         <NavListWrapper>
