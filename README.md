@@ -2,6 +2,9 @@
 
 A shopping app for a online cellphone store. The project was build as an assignment by a company using React.js with react hooks and TypeScript. The styling was done with [EmotionJS](https://emotion.sh/docs/introduction).
 
+#### Preview of the app is available on Netlify [here](https://cellnow.netlify.app/)
+
+
 | ![Hero page](cover1.png)| ![Popular phones](cover2.png) |![Checkout](cover3.png) |![Checkout](cover4.png)
 
 ## Functionalities
