@@ -7,15 +7,16 @@ import Card from '../../components/Card'
 import Icon from '../../components/Icon'
 import {AiOutlineMinus, AiOutlinePlus, AiOutlineDelete } from "react-icons/ai";
 import {ProductProp} from '../../types'
-import {Image,
+import {
+    Image,
     CardContent,
     Header,Paragraph,
     Button,
     Input,
     LayoutDiv,
-     ButtonContainer,
-     RemoveButton,
-     RemoveButtonWrapper}
+    ButtonContainer,
+    RemoveButton,
+    RemoveButtonWrapper}
 from './ItemComponents'
  
 

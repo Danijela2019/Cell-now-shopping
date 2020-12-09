@@ -16,8 +16,7 @@ const PopularBoard = () => {
                     ))
             }
         </CardBoardContainer>
-            
-     );
+    );
 }
 
 export default PopularBoard;

@@ -40,6 +40,11 @@ export const FooterColumn = styled('div')`
     `
 
 export const FooterRow = styled('div')`
-    display:flex;
-    justify-content:space-around;
+    display: flex;
+    justify-content: space-around;
+    `
+    export const FooterLine = styled('div')`
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
     `
