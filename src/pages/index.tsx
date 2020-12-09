@@ -4,6 +4,7 @@ import {Switch,Route} from "react-router-dom";
 import Home from './home'
 import Checkout from './checkout'
 import Phones from './phones'
+import Accesories from "./accessories/AccessoriesItems";
 
 const Routes = () => {
   return (
@@ -11,6 +12,7 @@ const Routes = () => {
             <Route exact path='/' component={Home} />
             <Route path='/phones' component={Phones} />
             <Route path='/checkout' component={Checkout} />
+            <Route path='/accessories' component={Accesories} />
       </Switch>
   );
 }
