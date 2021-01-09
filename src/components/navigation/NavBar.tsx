@@ -12,6 +12,7 @@ import { NavbarContainer, NavListWrapper} from './NavbarComponents';
 const  NavItems = () => {
    
     const {itemCount}:any= useContext(CartContext);
+    
     return ( 
         <NavListWrapper>
             <li css={{margin:'0 1rem'}}>

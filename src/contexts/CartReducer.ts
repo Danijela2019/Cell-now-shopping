@@ -1,16 +1,12 @@
 import {IItem} from '../types'
 
-const Storage = (cartItems: Array<IItem|null>) => {
-    localStorage.setItem('cart', JSON.stringify(cartItems.length > 0 ? cartItems: []));
-}
-
 export const sumItems = (cartItems :Array<IItem>) => {
-    Storage(cartItems);
     let itemCount = cartItems.reduce((total, product) => total + product.quantity, 0);
     let total = cartItems.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
-    return { itemCount, total }
+    return { itemCount:itemCount,
+            total: total 
+    }
 }
-
 
 export const CartReducer = (state:any, action: any) => {
     switch (action.type) {
@@ -58,7 +54,7 @@ export const CartReducer = (state:any, action: any) => {
                     ...sumItems([]),
                 }
         default:
-            return state
+            return state;
 
     }
 }

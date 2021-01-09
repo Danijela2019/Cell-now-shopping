@@ -22,6 +22,7 @@ from './ItemComponents'
 
 const Item = ({product}:ProductProp) => {
     const { increase, decrease, removeProduct } = useContext(CartContext);
+    
 
     return ( 
         <Card  
