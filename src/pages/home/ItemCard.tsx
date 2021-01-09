@@ -12,7 +12,7 @@ const ItemCard = ({product}) => {
     const { addProduct, cartItems, increase } = useContext(CartContext);
 
     const isInCart = product => {
-        return !!cartItems.find(item => item.id === product.id);
+       return cartItems.find(item => item.id === product.id);
     }
    
     return ( 
@@ -40,7 +40,7 @@ const ItemCard = ({product}) => {
                         >Add more</Button>
                     }
                     {
-                        !isInCart(product) && 
+                        !isInCart(product) &&
                         <Button
                         onClick={() => addProduct(product)}
                         >Add to cart</Button>
