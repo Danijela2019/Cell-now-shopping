@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 /** @jsxImportSource @emotion/react */
+import { jsx, css } from '@emotion/react'
+
 
 export const NavbarContainer = styled('nav')`
   height: 10vh;
@@ -50,37 +52,23 @@ margin:0 1rem;
   margin: 1rem 0;
 }`
 
-
-
-
-
-/*export const NavListWrapper = styled('ul')`
+export const NavbarLinks = styled('ul')`  
 display: flex;
-align-self :flex-end;
-list-style-type: none;
 align-items: center;
-@media (max-width: 767px) {
-  display: none;
-}
-`*/
-export const NavListWrapper = styled('ul')`  
-display: flex;
-align-self :flex-end;
+justify-content: space-between;
 list-style-type: none;
-align-items: center;
-justify-content: flex-start;
+text-transform: uppercase;
+transition: 0.2s;
+padding: 1rem;
 @media (max-width: 767px) {
-  display: none;
- 
-}
-`
-
-export const Open = styled(NavListWrapper)`
-display: flex;
-justify-content: flex-start;
-`
-
-/*.navbar_links {
   display: none;
   flex-direction: column;
-} */
+}`
+
+export const Open = styled(NavbarLinks)`
+display: flex;
+justify-content: flex-start;
+background-color: white;
+`
+
+
