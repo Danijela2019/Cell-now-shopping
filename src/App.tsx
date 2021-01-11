@@ -5,6 +5,7 @@ import ProductsContextProvider from './contexts/ProductContext';
 import CartContextProvider from './contexts/CartContext';
 import { css } from '@emotion/react'
 
+
 import NavBar from './components/navigation/NavBar'
 import Footer from './components/Footer'
 import Routes from './pages';
@@ -14,7 +15,7 @@ const App = () => {
   return (
     <ProductsContextProvider>
       <CartContextProvider>
-        <main css={PageContainer}>
+      <main css={PageContainer}>
           <div css={ContentWraper}>
             <Router>
               <NavBar/>
@@ -37,4 +38,5 @@ display: flex;
 const ContentWraper = css`
 flex: 1;
 `
+
 export default App;
