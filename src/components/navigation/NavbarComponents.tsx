@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from '@emotion/react'
-
+import { css } from '@emotion/react'
 
 export const NavbarContainer = styled('nav')`
   height: 10vh;
@@ -65,10 +64,23 @@ padding: 1rem;
   flex-direction: column;
 }`
 
-export const Open = styled(NavbarLinks)`
+export const MobileNavbar = styled('ul')`
 display: flex;
+flex-direction: column;
+align-items: center;
 justify-content: flex-start;
 background-color: white;
+list-style-type: none;
+text-transform: uppercase;
+transition: 0.2s;
+padding: 1rem;
 `
-
-
+export const NavlinkStyles = css`
+text-decoration: none;
+color: rgb(11, 3, 44);
+  &:hover,
+  &:active {
+  border-bottom: 3px solid black;
+  color:#272643;
+  }
+`
