@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 
-import logo from '../../assets/cellNowLogo.png'
+import logo from '../assets/cellNowLogo.png'
 
 
 const  Logo = () => {
