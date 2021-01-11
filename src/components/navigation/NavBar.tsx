@@ -1,48 +1,65 @@
 /** @jsxImportSource @emotion/react */
-import React, { useContext } from 'react';
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import React, { useContext, useState } from 'react';
+import { AiOutlineShoppingCart, AiOutlineMenu } from "react-icons/ai";
 import {NavLink} from 'react-router-dom'
 
-import Logo from './Logo'
+import Logo from '../Logo'
 import Icon from '../Icon'; 
 import { CartContext } from '../../contexts/CartContext';
-import { NavbarContainer, NavListWrapper} from './NavbarComponents';
+import { NavbarContainer,NavbarWrapper,NavbarLogo, NavbarToggle, Link} from './NavbarComponents';
+import './navbar.css'
 
 
-const  NavItems = () => {
-   
-    const {itemCount}:any= useContext(CartContext);
-    
+const  NavItems = ({sidebar,closeMobileMenu}:any) => {
+   const {itemCount}:any= useContext(CartContext);
     return ( 
-        <NavListWrapper>
-            <li css={{margin:'0 1rem'}}>
+        <ul className={sidebar ? "navbar_links open" : 'navbar_links'}>
+            <Link onClick={closeMobileMenu}>
                 <NavLink css={{textDecoration:'none', color:'#272643'}} exact to='/'>Home</NavLink>
-            </li>
-            <li css={{margin:'0 1rem'}}>
+            </Link>
+            <Link onClick={closeMobileMenu}>
                 <NavLink css={{textDecoration:'none', color:'#272643'}} to ='/phones'> Phones </NavLink>
-            </li>
-            <li css={{margin:'0 1rem'}}>
+            </Link>
+            <Link onClick={closeMobileMenu}>
                 <NavLink css={{textDecoration:'none', color:'#272643'}} to ='/accessories'> Accessories </NavLink>
-            </li>
-            <li css={{display:'flex',alignItems:'center'}}>
+            </Link>
+            <Link css={{display:'flex',alignItems:'center'}}  onClick={closeMobileMenu}>
             <NavLink  css={{textDecoration:'none', color:'#272643'}}to='/checkout'> Checkout ({itemCount})</NavLink>
             <Icon color='#272643' size='40px'>
                 <AiOutlineShoppingCart />
             </Icon>
-            </li>
-        </NavListWrapper>
+            </Link>
+        </ul>
     )
 }
 
 const  Navbar = () => {
+    const [sidebar, setSidebar] = useState(false);
+    const handleClick = () => setSidebar(!sidebar);
+    const closeMobileMenu = () => setSidebar(false);
+
+
     return (
        <NavbarContainer>
-           <div css={{height: '100%'}}>
-            <Logo/>
-           </div>
-            <NavItems />
+            < NavbarWrapper>
+                <NavbarLogo>
+                    <Logo/>
+                </NavbarLogo>
+                <NavbarToggle onClick={handleClick}>
+                    <Icon size='40px'color='black'>
+                        <AiOutlineMenu />
+                    </Icon>
+                </NavbarToggle>
+            </ NavbarWrapper>
+            <NavItems sidebar={sidebar} closeMobileMenu={closeMobileMenu} />
         </NavbarContainer>
     )
 }
 
 export default Navbar;
+
+/*   <div className='navbar_logo' css={{height: '100%'}}>
+                    <Logo/>
+                </div> */
+
+              

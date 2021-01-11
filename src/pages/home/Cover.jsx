@@ -2,7 +2,7 @@
 import {useHistory} from 'react-router-dom'
 
 import Button from '../../components/Button'
-import Logo from '../../components/navigation/Logo'
+import Logo from '../../components/Logo'
 import {Background, LogoWrapper, CoverHeader, CoverParagraph} from './HomeComponents'
 
 
