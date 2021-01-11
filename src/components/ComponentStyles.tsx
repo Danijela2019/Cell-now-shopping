@@ -9,12 +9,13 @@ width:  ${props => props.width};
 height: ${props => props.height};
 border-radius: 10px;
 margin: 1rem;
-display:flex;
+display: flex;
 flex-direction:row;
 @media (max-width: 370px) {
   width: 100%;
-  height:15rem;
-  margin-bottom:2rem;
+  height: ${props => props.mobHeight};
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }`;
 
 export const FooterContainer = styled('div')`

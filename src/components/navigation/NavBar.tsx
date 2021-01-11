@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Logo from '../Logo'
 import Icon from '../Icon'; 
 import NavItems from '../navigation/NavItems'
-import { NavbarContainer,NavbarWrapper,NavbarLogo, NavbarToggle} from './NavbarComponents';
+import { NavbarContainer, NavbarWrapper, NavbarLogo, NavbarToggle } from './NavbarComponents';
 
 
 const  Navbar = () => {
@@ -24,7 +24,7 @@ const  Navbar = () => {
                     </Icon>
                 </NavbarToggle>
             </NavbarWrapper>
-            <NavItems sidebar={sidebar} closeMobileMenu={closeMobileMenu} />
+            <NavItems sidebar={sidebar} closeMenu={closeMobileMenu} />
         </NavbarContainer>
     )
 }

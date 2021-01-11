@@ -34,53 +34,53 @@ export const NavbarWrapper = styled('div')`
   }
   `
 export const NavbarLogo = styled('div')`
-display: block;
-height: 100%;
-@media (max-width: 767px) {
+  display: block;
+  height: 100%;
+  @media (max-width: 767px) {
   display: none;
 }`
 export const NavbarToggle = styled('div')`
-display: none;
-@media (max-width: 767px) {
+  display: none;
+  @media (max-width: 767px) {
   display: flex;
 }`
 
 export const Link = styled('li')`
-margin:0 1rem;
-@media (max-width: 767px) {
+  margin:0 1rem;
+  @media (max-width: 767px) {
   margin: 1rem 0;
 }`
 
 export const NavbarLinks = styled('ul')`  
-display: flex;
-align-items: center;
-justify-content: space-between;
-list-style-type: none;
-text-transform: uppercase;
-transition: 0.2s;
-padding: 1rem;
-@media (max-width: 767px) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  text-transform: uppercase;
+  transition: 0.2s;
+  padding: 1rem;
+  @media (max-width: 767px) {
   display: none;
   flex-direction: column;
 }`
 
 export const MobileNavbar = styled('ul')`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-background-color: white;
-list-style-type: none;
-text-transform: uppercase;
-transition: 0.2s;
-padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+  list-style-type: none;
+  text-transform: uppercase;
+  transition: 0.2s;
+  padding: 1rem;
 `
 export const NavlinkStyles = css`
-text-decoration: none;
-color: rgb(11, 3, 44);
-  &:hover,
-  &:active {
-  border-bottom: 3px solid black;
-  color:#272643;
-  }
+  text-decoration: none;
+  color: rgb(11, 3, 44);
+    &:hover,
+    &:active {
+    border-bottom: 3px solid black;
+    color:#272643;
+    }
 `

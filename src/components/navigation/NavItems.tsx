@@ -6,21 +6,23 @@ import {NavLink} from 'react-router-dom';
 import Icon from '../Icon'; 
 import { CartContext } from '../../contexts/CartContext';
 import { Link ,NavbarLinks, MobileNavbar, NavlinkStyles} from './NavbarComponents';
+import { NavItemProps } from '../../types';
 
-const  NavItems = ({sidebar,closeMobileMenu}:any) => {
+const  NavItems = (props:NavItemProps) => {
+    const {sidebar,closeMenu} = props;
     const {itemCount}:any= useContext(CartContext);
     const links = (
     <React.Fragment>
-        <Link onClick={closeMobileMenu}>
+        <Link onClick={closeMenu}>
             <NavLink css={NavlinkStyles}  exact to='/'>Home</NavLink>
         </Link>
-        <Link onClick={closeMobileMenu}>
+        <Link onClick={closeMenu}>
             <NavLink css={NavlinkStyles} to ='/phones'> Phones </NavLink>
         </Link>
-        <Link onClick={closeMobileMenu}>
+        <Link onClick={closeMenu}>
             <NavLink css={NavlinkStyles} to ='/accessories'> Accessories </NavLink>
         </Link>
-        <Link css={{display:'flex',alignItems:'center'}}  onClick={closeMobileMenu}>
+        <Link css={{display:'flex',alignItems:'center'}}  onClick={closeMenu}>
         <NavLink  css={NavlinkStyles} to='/checkout'> Checkout ({itemCount})</NavLink>
             <Icon color='#272643' size='40px'>
                 <AiOutlineShoppingCart />

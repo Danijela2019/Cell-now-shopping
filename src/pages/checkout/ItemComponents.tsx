@@ -60,8 +60,9 @@ export const Button = styled('button')`
   export const LayoutDiv =  styled('div')`
   display:flex;
   @media (max-width: 370px) {
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
+    margin: 2.5rem;
 }`
 
 export const ButtonContainer = styled('div')`
@@ -78,8 +79,8 @@ outline: none;
 text-align: center;
 background-color:#272643;
 color:white;
-@media (max-width: 370px) {
-    width:6rem;
+@media (max-width: 373px) {
+    width: 15.3rem;
 `
 export const RemoveButtonWrapper = styled('div')`
 display:flex;
