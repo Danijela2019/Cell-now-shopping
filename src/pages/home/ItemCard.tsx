@@ -19,7 +19,7 @@ const ItemCard = ({product}) => {
         <Card
             text='black'
             bg='whitesmoke'
-            height= '200px'
+            height= '180px'
             width='350px'
         >
             <Image src={product.img} alt={product.alt}/>

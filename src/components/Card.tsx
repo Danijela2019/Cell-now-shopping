@@ -10,6 +10,7 @@ const  Card = (props:CardContainerProps) => {
     text={props.text}
     bg={props.bg}
     height={props.height}
+    mobHeight={props.mobHeight}
     width={props.width} >
       {props.children}
   </CardContainer>

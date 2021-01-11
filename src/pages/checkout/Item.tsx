@@ -30,6 +30,7 @@ const Item = ({product}:ProductProp) => {
             text="black"
             width="300px"
             height="180px"
+            mobHeight='18rem'
             >
             <LayoutDiv>
                 <Image

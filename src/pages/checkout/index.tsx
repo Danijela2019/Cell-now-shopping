@@ -24,28 +24,29 @@ const Checkout = () => {
 
     return ( 
         <div css={{margin:'5rem 1rem',alignContent:'center'}}>
-            <div>
+            <React.Fragment>
                 {cartItems.length > 0 ?
-                            <ItemsInCart/> :
-                            <EmptyCart >
-                                <h3 css={{margin:'3rem'}}>Your cart is empty</h3>
-                                <Icon size='70px' color='#272643'> 
-                                    <AiOutlineShoppingCart />
-                                </Icon>
-                                <Button  
-                                    bg="#2c698d"
-                                    text="white"
-                                    width="10rem"
-                                    height="2rem" 
-                                    clicked={redirectToPhones}>
-                                        Go back to phones
-                                </Button>
-                            </EmptyCart>
+                    <ItemsInCart/> :
+                        <EmptyCart >
+                            <h3 css={{margin:'3rem'}}>Your cart is empty</h3>
+                            <Icon size='70px' color='#272643'> 
+                                <AiOutlineShoppingCart />
+                            </Icon>
+                            <Button  
+                                bg="#2c698d"
+                                text="white"
+                                width="10rem"
+                                height="2rem" 
+                                clicked={redirectToPhones}>
+                                    Go back to phones
+                            </Button>
+                        </EmptyCart>
                 }
-            </div>
+            </React.Fragment>
+        
                 { cartItems.length > 0 &&
-                    <div>
-                        <div css={{display:'flex'}}>
+                    <React.Fragment>
+                        <div css={{display:'flex', marginTop:'6rem'}}>
                             <Header>Items:{' '}{itemCount}</Header>
                             <Header>Total Price:{' '}{total} SEK</Header>
                         </div>
@@ -68,9 +69,9 @@ const Checkout = () => {
                                     CLEAR CART
                             </Button>
                         </ButtonWrapper>
-                    </div> 
+                    </React.Fragment> 
                 }
-        </div> 
+        </div>
     );
 }
 

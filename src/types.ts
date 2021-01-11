@@ -28,6 +28,7 @@ export interface CardContainerProps {
     text: string
     width: string
     height: string
+    mobHeight: string
     children: any
 }
 
@@ -63,5 +64,10 @@ export interface IPropFollowUsData {
 }
 
 export interface IPropsChildren {
-    children: ReactNode;
+    children: ReactNode
+}
+
+export interface NavItemProps {
+    sidebar: boolean,
+    closeMenu: () => void
 }
