@@ -2,16 +2,17 @@
 import React, { createContext, useState } from 'react';
 import {IItem, IPropsChildren} from '../types';
 
-
-
 export const CartContext = createContext<IItem|null>(null)
 
-  
+const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+const itemCount = storage.reduce((total, product) => total + product.quantity, 0);
+const total = storage.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+   
 const CartContextProvider = ({children}: IPropsChildren) => {
     const[state, setState]= useState({
-        cartItems: [],
-        itemCount: 0,
-        total: 0,
+        cartItems: storage,
+        itemCount,
+        total,
         checkout:false
     })
 
@@ -22,6 +23,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
             copyCartItems.push(product)
             const itemCount = copyCartItems.reduce((total, product) => total + product.quantity, 0);
             const total = copyCartItems.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+            localStorage.setItem('cart', JSON.stringify(copyCartItems));
                 setState({
                 cartItems:copyCartItems,
                 itemCount,
@@ -35,6 +37,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         copyCartItems[index].quantity = state.cartItems[index].quantity+1
         const itemCount = copyCartItems.reduce((total, product) => total + product.quantity, 0);
         const total = copyCartItems.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+        localStorage.setItem('cart', JSON.stringify(copyCartItems));
         setState({
             cartItems:copyCartItems,
             itemCount,
@@ -46,6 +49,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         const copyCartItems = [...state.cartItems]
         const itemCount = copyCartItems.filter((item:IItem) => item.id !== product.id).reduce((total, product) => total + product.quantity, 0);
         const total = copyCartItems.filter((item:IItem) => item.id !== product.id).reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+        localStorage.setItem('cart', JSON.stringify(copyCartItems.filter((item:IItem) => item.id !== product.id)));
         setState({
             cartItems: copyCartItems.filter((item:IItem) => item.id !== product.id),
             itemCount,
@@ -59,6 +63,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         copyCartItems[index].quantity = state.cartItems[index].quantity-1
         const itemCount = copyCartItems.reduce((total, product) => total + product.quantity, 0);
         const total = copyCartItems.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+        localStorage.setItem('cart', JSON.stringify(copyCartItems));
         setState({
             cartItems:copyCartItems,
             itemCount,
@@ -66,6 +71,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         })
     }
     const clearCart = () => {
+        localStorage.setItem('cart', JSON.stringify([]));
         setState({
             cartItems: [],
             itemCount: 0,
