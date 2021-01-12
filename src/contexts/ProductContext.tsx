@@ -1,12 +1,12 @@
 import React, { createContext, useState} from 'react';
 import popularProducts from '../data/popular_data';
-import {IPropsChildren} from '../types'
+import {IPropsChildren, ProductContextType, IProduct} from '../types'
 
-// @ts-ignore
-export const ProductsContext = createContext()
+export const ProductsContext = createContext<ProductContextType|null>(null)
+
 
 const ProductsContextProvider = ({children}: IPropsChildren) => {
-const [products] = useState(popularProducts);
+const [products] = useState<IProduct[]>(popularProducts);
 
     return ( 
         <ProductsContext.Provider value={{products}}>

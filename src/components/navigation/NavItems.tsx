@@ -6,11 +6,11 @@ import {NavLink} from 'react-router-dom';
 import Icon from '../Icon'; 
 import { CartContext } from '../../contexts/CartContext';
 import { Link ,NavbarLinks, MobileNavbar, NavlinkStyles} from './NavbarComponents';
-import { NavItemProps } from '../../types';
+import { NavItemProps, CartContextType } from '../../types';
 
 const  NavItems = (props:NavItemProps) => {
     const {sidebar,closeMenu} = props;
-    const {itemCount}:any= useContext(CartContext);
+    const {itemCount}= useContext(CartContext) as CartContextType;
     const links = (
     <React.Fragment>
         <Link onClick={closeMenu}>
