@@ -1,4 +1,3 @@
-// @ts-nocheck
 /** @jsxImportSource @emotion/react */
 import React, { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
@@ -6,7 +5,7 @@ import { CartContext } from '../../contexts/CartContext';
 import Card from '../../components/Card'
 import Icon from '../../components/Icon'
 import {AiOutlineMinus, AiOutlinePlus, AiOutlineDelete } from "react-icons/ai";
-import {ProductProp} from '../../types'
+import {ProductProp, CartContextType } from '../../types'
 import {
     Image,
     CardContent,
@@ -21,7 +20,7 @@ from './ItemComponents'
  
 
 const Item = ({product}:ProductProp) => {
-    const { increase, decrease, removeProduct } = useContext(CartContext);
+    const { increase, decrease, removeProduct } = useContext(CartContext) as CartContextType;
     
 
     return ( 

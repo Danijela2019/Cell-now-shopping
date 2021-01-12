@@ -1,13 +1,13 @@
-// @ts-nocheck
 import React, { useContext } from 'react';
 
 import ItemCard from './ItemCard';
 import { ProductsContext } from '../../contexts/ProductContext';
 import {CardBoardContainer} from './HomeComponents'
+import { ProductContextType } from '../../types'
 
 const PopularBoard = () => {
 
-    const { products} = useContext(ProductsContext)
+    const { products} = useContext(ProductsContext) as ProductContextType
 
     return (
         <CardBoardContainer>

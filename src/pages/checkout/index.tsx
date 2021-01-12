@@ -1,15 +1,16 @@
-// @ts-nocheck
+
 /** @jsxImportSource @emotion/react */
 import React, { useContext } from 'react';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import {Header,ButtonWrapper,EmptyCart} from './ItemComponents';
 
 
-import ItemsInCart from './ItemsInCart'
+import ItemsInCart from './ItemsInCart';
 import { CartContext } from '../../contexts/CartContext';
-import Button from '../../components/Button'
-import Icon from '../../components/Icon'
+import Button from '../../components/Button';
+import Icon from '../../components/Icon';
+import {CartContextType } from '../../types';
 
 const Checkout = () => {
     const goToCheckout = () => {console.log('show Order Confirmed modal here')}
@@ -20,7 +21,7 @@ const Checkout = () => {
     }  
 
     
-    const { total, cartItems, itemCount, clearCart } = useContext(CartContext);
+    const { total, cartItems, itemCount, clearCart } = useContext(CartContext)  as CartContextType ;
 
     return ( 
         <div css={{margin:'5rem 1rem',alignContent:'center'}}>

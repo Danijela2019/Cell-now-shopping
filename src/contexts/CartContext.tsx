@@ -1,13 +1,32 @@
-// @ts-nocheck
+//@ts-nocheck
 import React, { createContext, useState } from 'react';
-import {IItem, IPropsChildren} from '../types';
+import { IItem, IPropsChildren, IProduct } from '../types';
 
-export const CartContext = createContext<IItem|null>(null)
 
-const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-const itemCount = storage.reduce((total, product) => total + product.quantity, 0);
-const total = storage.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
-   
+interface IState {
+    cartItems: IItem[];
+    itemCount: number;
+    total: number;
+    checkout: boolean;
+}
+
+interface CartContextType {
+    total:number;
+    cartItems: IItem[];
+    itemCount: number;
+    addProduct: (product: IProduct) => void;
+    increase : (product: IProduct) => void;
+    removeProduct: (product: IProduct) => void;
+    decrease: (product: IProduct) => void;
+    clearCart: () =>void;
+}
+
+export const CartContext = createContext<CartContextType|null>(null)
+
+const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')||'') : [];
+const itemCount = storage.reduce((total:number, product:IProduct) => total + product.quantity!, 0);
+const total = storage.reduce((total: number, product:IProduct) => total + product.price * product.quantity!, 0).toFixed(2);
+
 const CartContextProvider = ({children}: IPropsChildren) => {
     const[state, setState]= useState({
         cartItems: storage,
@@ -16,7 +35,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         checkout:false
     })
 
-    const addProduct = ( product ) => {
+    const addProduct = ( product: IProduct ) => {
         if (!state.cartItems.find((item:IItem) => item.id === product.id)){
             let copyCartItems =[ ...state.cartItems]
             product.quantity= 1
@@ -31,7 +50,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
             })
         } 
     }
-    const increase = ( product ) => {
+    const increase = ( product: IProduct ) => {
         const copyCartItems= [...state.cartItems]
         const index = copyCartItems.findIndex((item:IItem) => item.id === product.id)
         copyCartItems[index].quantity = state.cartItems[index].quantity+1
@@ -45,7 +64,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         })
     }
   
-    const removeProduct = (product) => {
+    const removeProduct = (product: IProduct) => {
         const copyCartItems = [...state.cartItems]
         const itemCount = copyCartItems.filter((item:IItem) => item.id !== product.id).reduce((total, product) => total + product.quantity, 0);
         const total = copyCartItems.filter((item:IItem) => item.id !== product.id).reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
@@ -57,7 +76,7 @@ const CartContextProvider = ({children}: IPropsChildren) => {
         })
     }
 
-    const decrease = (product) => {
+    const decrease = (product: IProduct) => {
         const copyCartItems= [...state.cartItems]
         const index = copyCartItems.findIndex((item:IItem) => item.id === product.id)
         copyCartItems[index].quantity = state.cartItems[index].quantity-1
