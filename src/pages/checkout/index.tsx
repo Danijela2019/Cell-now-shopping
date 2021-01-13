@@ -25,7 +25,7 @@ const Checkout = (): React.ReactElement => {
   return (
     <div css={{ margin: '5rem 1rem', alignContent: 'center' }}>
       <>
-        {cartItems.length > 0 ? (
+        {cartItems!.length > 0 ? (
           <ItemsInCart />
         ) : (
           <EmptyCart>
@@ -46,7 +46,7 @@ const Checkout = (): React.ReactElement => {
         )}
       </>
 
-      {cartItems.length > 0 && (
+      {cartItems!.length > 0 && (
         <>
           <div css={{ display: 'flex', marginTop: '6rem' }}>
             <Header>Items: {itemCount}</Header>

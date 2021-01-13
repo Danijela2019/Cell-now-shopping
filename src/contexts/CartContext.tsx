@@ -1,24 +1,5 @@
-// @ts-nocheck
 import React, { createContext, useState } from 'react';
-import { IItem, IPropsChildren, IProduct } from '../types';
-
-/* interface IState {
-  cartItems: IItem[];
-  itemCount: number;
-  total: number;
-  checkout: boolean;
-} */
-
-interface CartContextType {
-  total: number;
-  cartItems: IItem[];
-  itemCount: number;
-  addProduct: (product: IProduct) => void;
-  increase: (product: IProduct) => void;
-  removeProduct: (product: IProduct) => void;
-  decrease: (product: IProduct) => void;
-  clearCart: () => void;
-}
+import { IItem, IPropsChildren, IProduct, CartContextType } from '../types';
 
 export const CartContext = createContext<CartContextType | null>(null);
 
@@ -69,6 +50,7 @@ const CartContextProvider = ({
         cartItems: copyCartItems,
         itemCount: itemCountAddProd,
         total: totalAddProd,
+        checkout: false,
       });
     }
   };
@@ -95,6 +77,7 @@ const CartContextProvider = ({
       cartItems: copyCartItems,
       itemCount: itemCountIncreaseProd,
       total: totalIncreaseProd,
+      checkout: false,
     });
   };
 
@@ -124,6 +107,7 @@ const CartContextProvider = ({
       cartItems: copyCartItems.filter((item: IItem) => item.id !== product.id),
       itemCount: itemCountRemoveProd,
       total: totalRemoveProd,
+      checkout: false,
     });
   };
 
@@ -150,6 +134,7 @@ const CartContextProvider = ({
       cartItems: copyCartItems,
       itemCount: itemCountDecreaseProd,
       total: totalDecreaseProd,
+      checkout: false,
     });
   };
   const clearCart = () => {

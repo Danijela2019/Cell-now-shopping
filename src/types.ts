@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactChildren, ReactChild, ReactElement } from 'react';
 
 export interface IItem {
   id: number;
@@ -7,7 +7,7 @@ export interface IItem {
   description: string;
   name: string;
   price: number;
-  quantity: number;
+  quantity?: number;
 }
 
 export interface ProductProp {
@@ -37,7 +37,7 @@ export interface CardContainerProps {
   width: string;
   height: string;
   mobHeight: string;
-  children: React.ReactElement;
+  children: ReactElement | ReactElement[];
 }
 
 export interface IconProps {
@@ -72,7 +72,7 @@ export interface IPropFollowUsData {
 }
 
 export interface IPropsChildren {
-  children: ReactNode;
+  children: ReactChild | ReactChildren;
 }
 
 export interface NavItemProps {
@@ -102,13 +102,14 @@ export interface IState {
 }
 
 export interface CartContextType {
-  state?: IState;
-  total: number;
-  cartItems: IItem[];
-  itemCount: number;
+  setState?: (state: IState) => void;
   addProduct: (product: IProduct) => void;
   increase: (product: IProduct) => void;
   removeProduct: (product: IProduct) => void;
   decrease: (product: IProduct) => void;
   clearCart: () => void;
+  cartItems: IItem[];
+  itemCount: number;
+  total: number;
+  checkout: boolean;
 }
