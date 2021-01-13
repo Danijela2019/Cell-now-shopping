@@ -20,18 +20,10 @@ import {
 } from './ItemComponents';
 
 const Item = ({ product }: ProductProp): React.ReactElement => {
-  const { increase, decrease, removeProduct } = useContext(
-    CartContext
-  ) as CartContextType;
+  const { increase, decrease, removeProduct } = useContext(CartContext) as CartContextType;
 
   return (
-    <Card
-      bg="white"
-      text="black"
-      width="300px"
-      height="180px"
-      mobHeight="18rem"
-    >
+    <Card bg="white" text="black" width="300px" height="180px" mobHeight="18rem">
       <LayoutDiv>
         <Image alt={product.alt} src={product.img} />
         <CardContent>
@@ -45,11 +37,7 @@ const Item = ({ product }: ProductProp): React.ReactElement => {
             </Button>
             <Input value={product.quantity!} readOnly type="text" min="0" />
             <Button
-              onClick={() =>
-                product.quantity! <= 1
-                  ? removeProduct(product)
-                  : decrease(product)
-              }
+              onClick={() => (product.quantity! <= 1 ? removeProduct(product) : decrease(product))}
             >
               <Icon size="20px" color="white">
                 <AiOutlineMinus />

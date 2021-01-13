@@ -3,12 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
-import {
-  Background,
-  LogoWrapper,
-  CoverHeader,
-  CoverParagraph,
-} from './HomeComponents';
+import { Background, LogoWrapper, CoverHeader, CoverParagraph } from './HomeComponents';
 
 const Cover = (): React.ReactElement => {
   const history = useHistory();
@@ -23,13 +18,7 @@ const Cover = (): React.ReactElement => {
       </LogoWrapper>
       <CoverHeader>Find your favorite phone</CoverHeader>
       <CoverParagraph>With us the sky is the limit</CoverParagraph>
-      <Button
-        bg="#2c698d"
-        text="white"
-        width="12rem"
-        height="3rem"
-        clicked={redirectToPhones}
-      >
+      <Button bg="#2c698d" text="white" width="12rem" height="3rem" clicked={redirectToPhones}>
         View all phones
       </Button>
     </Background>

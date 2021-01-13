@@ -5,12 +5,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import Logo from '../Logo';
 import Icon from '../Icon';
 import NavItems from './NavItems';
-import {
-  NavbarContainer,
-  NavbarWrapper,
-  NavbarLogo,
-  NavbarToggle,
-} from './NavbarComponents';
+import { NavbarContainer, NavbarWrapper, NavbarLogo, NavbarToggle } from './NavbarComponents';
 
 const Navbar = (): React.ReactElement => {
   const [sidebar, setSidebar] = useState(false);

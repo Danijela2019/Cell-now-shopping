@@ -3,24 +3,16 @@ import { IItem, IPropsChildren, IProduct, CartContextType } from '../types';
 
 export const CartContext = createContext<CartContextType | null>(null);
 
-const storage = localStorage.getItem('cart')
-  ? JSON.parse(localStorage.getItem('cart') || '')
-  : [];
+const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') || '') : [];
 const itemCount = storage.reduce(
   (total: number, product: IProduct) => total + product.quantity!,
   0
 );
 const total = storage
-  .reduce(
-    (total1: number, product: IProduct) =>
-      total1 + product.price * product.quantity!,
-    0
-  )
+  .reduce((total1: number, product: IProduct) => total1 + product.price * product.quantity!, 0)
   .toFixed(2);
 
-const CartContextProvider = ({
-  children,
-}: IPropsChildren): React.ReactElement => {
+const CartContextProvider = ({ children }: IPropsChildren): React.ReactElement => {
   const [state, setState] = useState({
     cartItems: storage,
     itemCount,
@@ -34,16 +26,11 @@ const CartContextProvider = ({
       product.quantity = 1;
       copyCartItems.push(product);
       const itemCountAddProd = copyCartItems.reduce(
-        (totalReducer, productReducer) =>
-          totalReducer + productReducer.quantity,
+        (totalReducer, productReducer) => totalReducer + productReducer.quantity,
         0
       );
       const totalAddProd = copyCartItems
-        .reduce(
-          (totalAdd, productAdd) =>
-            totalAdd + productAdd.price * productAdd.quantity,
-          0
-        )
+        .reduce((totalAdd, productAdd) => totalAdd + productAdd.price * productAdd.quantity, 0)
         .toFixed(2);
       localStorage.setItem('cart', JSON.stringify(copyCartItems));
       setState({
@@ -56,13 +43,10 @@ const CartContextProvider = ({
   };
   const increase = (product: IProduct) => {
     const copyCartItems = [...state.cartItems];
-    const index = copyCartItems.findIndex(
-      (item: IItem) => item.id === product.id
-    );
+    const index = copyCartItems.findIndex((item: IItem) => item.id === product.id);
     copyCartItems[index].quantity = state.cartItems[index].quantity + 1;
     const itemCountIncreaseProd = copyCartItems.reduce(
-      (totalIncrease, productIncrease) =>
-        totalIncrease + productIncrease.quantity,
+      (totalIncrease, productIncrease) => totalIncrease + productIncrease.quantity,
       0
     );
     const totalIncreaseProd = copyCartItems
@@ -85,10 +69,7 @@ const CartContextProvider = ({
     const copyCartItems = [...state.cartItems];
     const itemCountRemoveProd = copyCartItems
       .filter((item: IItem) => item.id !== product.id)
-      .reduce(
-        (totalRemove, productRemove) => totalRemove + productRemove.quantity,
-        0
-      );
+      .reduce((totalRemove, productRemove) => totalRemove + productRemove.quantity, 0);
     const totalRemoveProd = copyCartItems
       .filter((item: IItem) => item.id !== product.id)
       .reduce(
@@ -99,9 +80,7 @@ const CartContextProvider = ({
       .toFixed(2);
     localStorage.setItem(
       'cart',
-      JSON.stringify(
-        copyCartItems.filter((item: IItem) => item.id !== product.id)
-      )
+      JSON.stringify(copyCartItems.filter((item: IItem) => item.id !== product.id))
     );
     setState({
       cartItems: copyCartItems.filter((item: IItem) => item.id !== product.id),
@@ -113,13 +92,10 @@ const CartContextProvider = ({
 
   const decrease = (product: IProduct) => {
     const copyCartItems = [...state.cartItems];
-    const index = copyCartItems.findIndex(
-      (item: IItem) => item.id === product.id
-    );
+    const index = copyCartItems.findIndex((item: IItem) => item.id === product.id);
     copyCartItems[index].quantity = state.cartItems[index].quantity - 1;
     const itemCountDecreaseProd = copyCartItems.reduce(
-      (totalDecrease, productDecrease) =>
-        totalDecrease + productDecrease.quantity,
+      (totalDecrease, productDecrease) => totalDecrease + productDecrease.quantity,
       0
     );
     const totalDecreaseProd = copyCartItems
