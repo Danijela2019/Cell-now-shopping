@@ -1,13 +1,13 @@
 import React from 'react';
-import AccesoriesItems from './AccessoriesItems'
+import AccesoriesItems from './AccessoriesItems';
 
-const Accesories = () => {
-    return (
-        <section>
-            <div>Phoneitmes:</div>
-            <AccesoriesItems />
-        </section>  
-    )
-}
+const Accesories = (): React.ReactElement => {
+  return (
+    <section>
+      <div>Phoneitmes:</div>
+      <AccesoriesItems />
+    </section>
+  );
+};
 
 export default Accesories;
