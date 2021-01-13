@@ -5,12 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import Icon from '../Icon';
 import { CartContext } from '../../contexts/CartContext';
-import {
-  Link,
-  NavbarLinks,
-  MobileNavbar,
-  NavlinkStyles,
-} from './NavbarComponents';
+import { Link, NavbarLinks, MobileNavbar, NavlinkStyles } from './NavbarComponents';
 import { NavItemProps, CartContextType } from '../../types';
 
 const NavItems = (props: NavItemProps): React.ReactElement => {
@@ -47,15 +42,7 @@ const NavItems = (props: NavItemProps): React.ReactElement => {
     </>
   );
 
-  return (
-    <>
-      {sidebar ? (
-        <MobileNavbar>{links}</MobileNavbar>
-      ) : (
-        <NavbarLinks>{links}</NavbarLinks>
-      )}
-    </>
-  );
+  return <>{sidebar ? <MobileNavbar>{links}</MobileNavbar> : <NavbarLinks>{links}</NavbarLinks>}</>;
 };
 
 export default NavItems;

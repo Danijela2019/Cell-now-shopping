@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  AiFillInstagram,
-  AiFillLinkedin,
-  AiFillFacebook,
-} from 'react-icons/ai';
+import { AiFillInstagram, AiFillLinkedin, AiFillFacebook } from 'react-icons/ai';
 
 export const footerAnchors = [
   {

@@ -11,9 +11,7 @@ import Icon from '../../components/Icon';
 import { CartContextType } from '../../types';
 
 const Checkout = (): React.ReactElement => {
-  const { total, cartItems, itemCount, clearCart } = useContext(
-    CartContext
-  ) as CartContextType;
+  const { total, cartItems, itemCount, clearCart } = useContext(CartContext) as CartContextType;
 
   const history = useHistory();
   const redirectToPhones = () => {
@@ -54,22 +52,10 @@ const Checkout = (): React.ReactElement => {
           </div>
           <hr />
           <ButtonWrapper>
-            <Button
-              bg="#2c698d"
-              text="white"
-              width="10rem"
-              height="2rem"
-              clicked={goToCheckout}
-            >
+            <Button bg="#2c698d" text="white" width="10rem" height="2rem" clicked={goToCheckout}>
               CHECKOUT
             </Button>
-            <Button
-              bg="#2c698d"
-              text="white"
-              width="10rem"
-              height="2rem"
-              clicked={clearCart}
-            >
+            <Button bg="#2c698d" text="white" width="10rem" height="2rem" clicked={clearCart}>
               CLEAR CART
             </Button>
           </ButtonWrapper>

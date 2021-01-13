@@ -11,8 +11,7 @@ const popularProducts = [
     img: cell1,
     alt: 'Black cellphone with foldable screen',
     name: 'Samsung Galaxy Z ',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
     price: 550,
   },
   {
@@ -20,8 +19,7 @@ const popularProducts = [
     img: cell2,
     alt: 'Cellphone2',
     name: 'Samsung Galaxy A',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
     price: 450,
   },
   {
@@ -29,8 +27,7 @@ const popularProducts = [
     img: cell3,
     alt: 'Cellphone3',
     name: 'Iphone X',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi',
+    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi',
     price: 390,
   },
   {
@@ -38,8 +35,7 @@ const popularProducts = [
     img: cell4,
     alt: 'Cellphone4',
     name: 'Iphone AAs',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut',
+    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut',
     price: 360,
   },
   {
@@ -55,8 +51,7 @@ const popularProducts = [
     img: cell6,
     alt: 'Cellphone6',
     name: 'OnePlus Nord S',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ',
+    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ',
     price: 670,
   },
 ];

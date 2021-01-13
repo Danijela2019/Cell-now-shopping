@@ -1,13 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 
-import {
-  FooterColumn,
-  FooterContainer,
-  Anchor,
-  FooterRow,
-  FooterLine,
-} from './ComponentStyles';
+import { FooterColumn, FooterContainer, Anchor, FooterRow, FooterLine } from './ComponentStyles';
 import Icon from './Icon';
 import { footerAnchors, followUsData } from '../data/anchor_data';
 import {
@@ -17,9 +11,7 @@ import {
   IPropFollowUsData,
 } from '../types';
 
-const FooterColumnList = ({
-  data,
-}: IPropFooterColumnData): React.ReactElement => (
+const FooterColumnList = ({ data }: IPropFooterColumnData): React.ReactElement => (
   <FooterColumn>
     <h3>{data.category}</h3>
     <Anchor href="#" target="_blank" rel="noopener">

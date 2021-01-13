@@ -15,7 +15,6 @@ module.exports = {
       "react/react-in-jsx-scope": "off",
       "jsx-a11y/anchor-is-valid": 0,
       "no-param-reassign": [2, { "props": false }],
-      '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/ban-ts-comment': 0
+      '@typescript-eslint/no-non-null-assertion': 'off'
     },
   };
