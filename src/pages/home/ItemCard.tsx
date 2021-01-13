@@ -1,4 +1,3 @@
-// @ts-nocheck
 /** @jsxImportSource @emotion/react */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -20,11 +19,18 @@ const ItemCard = ({ product }: ProductProp): React.ReactElement => {
   ) as CartContextType;
 
   const isInCart = (product1: IItem) => {
-    return cartItems.find((item) => item.id === product1.id);
+    return cartItems!.find((item: IItem) => item.id === product1.id);
   };
 
   return (
-    <Card text="black" bg="whitesmoke" height="180px" width="350px">
+    <Card
+      text="black"
+      bg="whitesmoke
+     "
+      height="180px"
+      width="350px"
+      mobHeight="200px"
+    >
       <Image src={product.img} alt={product.alt} />
       <CardContent>
         <Header>{product.name}</Header>
