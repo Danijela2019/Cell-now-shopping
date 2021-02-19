@@ -8,6 +8,8 @@ const StyledButton = styled('button')<ButtonProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border-radius: 10px;
+  outline: none;
+  border: none;
   @media (max-width: 370px) {
     width: 6rem;
     height: 3rem;
