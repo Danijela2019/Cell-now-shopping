@@ -61,7 +61,7 @@ export const footerAnchors = [
 export const followUsData = [
   {
     id: 1,
-    text: 'Facebook',
+    text: 'Linkedin',
     link: <AiFillLinkedin />,
   },
   {
@@ -71,7 +71,7 @@ export const followUsData = [
   },
   {
     id: 3,
-    text: 'Linkedin',
+    text: 'Facebook',
     link: <AiFillFacebook />,
   },
 ];

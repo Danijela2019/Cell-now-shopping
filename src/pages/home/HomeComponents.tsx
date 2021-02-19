@@ -28,19 +28,22 @@ export const Button = styled('button')`
   height: 2rem;
   margin: 0.5rem;
   border-radius: 10px;
+  outline: none;
+  border: none;
   cursor: pointer;
 `;
 export const Background = styled('div')`
   background-image: url(${cover});
-  width: 100%;
-  height: 75vh;
+  width: 90%;
+  margin: auto;
+  height: 80vh;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
 `;
 export const CoverHeader = styled('h1')`
-fontSize: 3rem, 
-margin-bottom:'-1rem'
+  font-size: 3rem;
+  margin-bottom: -1rem;
 `;
 export const LogoWrapper = styled('h1')`
   height: 30%;
@@ -56,9 +59,9 @@ export const CardBoardContainer = styled('div')`
   flex-wrap: wrap;
   margin: 1rem;
   justify-content: space-around;
-  aligh-items: center;
+  align-items: center;
 `;
 export const BestOffer = styled('h1')`
   text-align: left;
-  margin-left: 2rem;
+  margin-left: 3rem;
 `;
